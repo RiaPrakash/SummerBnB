@@ -62,6 +62,7 @@ export class ListingService {
   deleteListing(listing: any) {
     this.http.post('http://localhost:5000/api/listings/delete/' + listing.listingID, { listingID: listing.listingID }, this.httpOptions).subscribe((response: HttpResponse) => {
       if (response) { // successful http request, same format as HttpResponse model / class
+        alert("Listing has been deleted!");
         this.navController.navigateForward('curlistings'); // navigate to the users page
       }
       else {

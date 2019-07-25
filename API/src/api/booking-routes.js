@@ -4,6 +4,15 @@ const router = express.Router();
 const BookingService = require('../services/booking-service')
 const bookingServer = new BookingService();
 
+// Get All
+router.get('/', (req,res) => {
+    bookingServer.findBookings().then(bookings => {
+        res.json(bookings);
+    }).catch(err => {
+        res.json(err);
+    });
+});
+
 // Get by listingId
 router.get('/:listingId', (req,res) => {
     bookingServer.findBookingBylistingId(req.params.listingId).then(user => {

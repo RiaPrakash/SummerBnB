@@ -11,7 +11,6 @@ export class AuthServiceService {
   
   user: User;
   
-  private loggedin: boolean = false;
 
   constructor(private http: HttpClient, private navController: NavController) { }
 

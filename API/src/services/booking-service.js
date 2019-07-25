@@ -4,6 +4,18 @@ const Booking = require("../models/booking-model");
 module.exports = class BookingService{
     constructor() { }
 
+    // Get all
+    findBookings() {
+        return new Promise((resolve, reject) => {
+            Booking.findAllBookings((err, res) => {
+                if (err) {
+                    reject(err);
+                }
+                resolve(res);
+            });
+        });
+    }
+    
     // Find by listingId
     findBookingBylistingId(listingId){
         return new Promise((resolve, reject) => {

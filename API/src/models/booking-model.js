@@ -12,6 +12,19 @@ var Booking = (booking) => {
 
 module.exports = Booking;
 
+// Get All
+Booking.findAllBookings = (result) => {
+    mysqlConn.query("Select * from booking", (err, res) => {
+        if (err) {
+        console.log("error: ", err);
+        result(err, null);
+        } else {
+        console.log(res);
+        result(null, res);
+        }
+    });
+};
+
 // ? Is this requirement
 // Get by bookingId
 Booking.findBookingBybookingId = (bookingId, result) => {

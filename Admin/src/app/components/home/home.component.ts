@@ -4,7 +4,10 @@ import { UserService } from '../../services/user.service';
 import { ServiceProvider } from '../../models/service-provider';
 import { ServiceProvidersService } from '../../services/service-providers.service';
 import { HttpClient } from '@angular/common/http';
-// import { userInfo } from 'os';
+import { AuthService } from '../../services/auth.service';
+
+
+
 
 @Component({
   selector: 'app-home',
@@ -17,11 +20,19 @@ export class HomeComponent implements OnInit {
   newuser: User = new User();
   newprovider: ServiceProvider = new ServiceProvider();
 
-  constructor(private userService: UserService, private serviceProvidersService: ServiceProvidersService, private http: HttpClient) { 
+  constructor(private userService: UserService, private serviceProvidersService: ServiceProvidersService, private http: HttpClient, private authService: AuthService) { 
   };
+  // constructor(private userService: UserService, private serviceProvidersService: ServiceProvidersService, private http: HttpClient, private authService: AuthService, private navCtrl: NavController) { 
+  // };
  
   ngOnInit() {
-
+    if (this.authService.getProfile()){
+    }
+    else {
+      alert("Not logged in! You must log in first");
+      // Cheating, assuming Admin opens on port 4200
+      window.location.replace("http://localhost:4200/login");
+    }
   }
 
   submitUser(){
