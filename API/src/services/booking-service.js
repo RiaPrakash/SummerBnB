@@ -129,8 +129,6 @@ module.exports = class BookingService{
         });
     }
 
-    
-
     // Update
     updateBooking(bookingReq) {
         return new Promise((resolve, reject) => {

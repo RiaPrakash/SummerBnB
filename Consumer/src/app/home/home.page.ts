@@ -46,7 +46,6 @@ export class HomePage {
     this.navCtrl.navigateForward("register");
   }
 
-
   switchToProvider() {
     // Assuming Provider is running on port 8100 and Consumer(User) on port 8100
     window.location.replace("http://localhost:8100/home");

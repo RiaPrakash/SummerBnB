@@ -14,6 +14,7 @@ export class ViewbookingsPage implements OnInit {
 
   // Didn't let me set this to type Booking
   bookings: any;
+  
 
   constructor(private listingService: ListingService, private authServiceService: AuthServiceService, private navCtrl: NavController, private bookingService: BookingService) { }
 
@@ -40,4 +41,6 @@ export class ViewbookingsPage implements OnInit {
       }
     });
   }
+
+
 }

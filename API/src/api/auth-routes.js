@@ -6,14 +6,12 @@ const authServer = new AuthService();
 
 // Login All
 router.post('/login', (req,res) => {
-    // asynchronous function call structure 
     authServer.loginUser(req.body).then(user => {
         res.json(user);
     }).catch(err => {
         res.json(err);
     });
 });
-
 
 // Register 
 router.post('/register', (req,res) => {

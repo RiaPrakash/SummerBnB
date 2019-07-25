@@ -25,7 +25,6 @@ Booking.findAllBookings = (result) => {
     });
 };
 
-// ? Is this requirement
 // Get by bookingId
 Booking.findBookingBybookingId = (bookingId, result) => {
     mysqlConn.query("Select * from booking where Id = ?", bookingId, (err, res) => {
@@ -90,7 +89,6 @@ Booking.findBookingByHostId = (hostId, result) => {
         }
     });
 };
-
 
 // Add
 Booking.addBooking = (newBooking, result) => {

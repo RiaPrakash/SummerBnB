@@ -112,8 +112,6 @@ User.findUserByEmail = (role, email, result) => {
     });
 };
 
-
-
 // Create 
 User.createUser = (user, result) => {
     mysqlConn.query("INSERT user set ?", user, (err, res) => {
@@ -141,7 +139,7 @@ User.deleteUser = (userId, result) => {
 
 // Update
 User.updateUser = (updatedUser, result) => {
-    // create query to update booking
+    // create query to update User
     let query = "UPDATE user SET "; // update part of MySQL query
     let keys = Object.keys(updatedUser); // get keys / parameters of user object
     let userArray = []; // create empty array which will be our input parameters / columns for the MySQL query

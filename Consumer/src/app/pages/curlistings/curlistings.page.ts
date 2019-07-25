@@ -52,7 +52,7 @@ export class CurlistingsPage implements OnInit {
         this.listingsview = response;
         });
     } 
-    // Redirect to login page if not loggen in
+    // Redirect to login page if not logged in
     else {
       alert("Not logged in! You must log in first");
       this.navCtrl.navigateForward("home");

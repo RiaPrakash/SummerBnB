@@ -16,7 +16,6 @@ export class AuthServiceService {
   login(email, password, role, callback) {
     this.http.post('http://localhost:5000/api/auth/login', { email, password, role }).subscribe((response: Array<User>) => {
       console.log("response recieved by backend login: ", response);
-      // this.loggedin = response;
       callback(response);
     });
   }

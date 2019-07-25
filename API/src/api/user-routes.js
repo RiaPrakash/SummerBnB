@@ -4,7 +4,6 @@ const router = express.Router();
 const UserService = require('../services/user-service');
 const userServer = new UserService();
 
-
 // Get All
 router.get('/', (req,res) => {
     userServer.findUsers().then(users => {

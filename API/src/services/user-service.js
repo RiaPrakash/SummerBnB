@@ -138,8 +138,6 @@ module.exports = class UserService {
         });
     }
 
-
-
     // Login All
     loginUser(userReq) {
         return new Promise((resolve, reject) => {

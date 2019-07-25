@@ -4,8 +4,6 @@ const User = require("../models/user-model");
 const UserService = require('../services/user-service')
 const userServer = new UserService();
 
-
-
 module.exports = class AuthService {
     constructor() {}
 

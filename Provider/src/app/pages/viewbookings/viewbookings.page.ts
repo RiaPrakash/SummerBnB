@@ -11,7 +11,6 @@ export class ViewbookingsPage implements OnInit {
   listing: any;
   bookings: any;
 
-  // mkae all in booking service
   constructor(private listingService: ListingService) { }
 
   ngOnInit() {
