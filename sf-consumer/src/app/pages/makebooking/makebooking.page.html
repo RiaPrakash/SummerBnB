@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="curlistings"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Make Booking</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-content class="background">
+    <ion-card class="background-card">
+      <ion-card-header>
+        <ion-card-title>Make Booking</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <!-- Start and End Dates -->
+        <ion-item>
+          <ion-input type="text" placeholder="Enter Start Date" [(ngModel)]="newbooking.dateStart"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="text" placeholder="Enter End Date" [(ngModel)]="newbooking.dateEnd"></ion-input>
+        </ion-item>
+        <!-- Book -->
+        <div>
+          <ion-button size="medium" (click)="book()">Book</ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+</ion-content>

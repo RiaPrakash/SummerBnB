@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+        <ion-back-button defaultHref="curlistings"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Create New Listing</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="background">
+    <ion-card class="background-card">
+      <ion-card-header>
+        <ion-card-title>Listing Information</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-input type="text" placeholder="Title" [(ngModel)]="newlisting.title"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="text" placeholder="Location" [(ngModel)]="newlisting.location"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="text" placeholder="Description" [(ngModel)]="newlisting.description"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="text" placeholder="Number Of People" [(ngModel)]="newlisting.numberOfPeople"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="text" placeholder="Price Per Night" [(ngModel)]="newlisting.pricePerNight"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="text" placeholder="Image Url" [(ngModel)]="newlisting.img"></ion-input>
+        </ion-item>
+        <div>
+          <ion-button size="medium" (click)="create()">Create</ion-button>
+        </div>
+      </ion-card-content>
+  
+    </ion-card>
+  
+  </ion-content>

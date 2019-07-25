@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="curlistings"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      <h1>View Listing</h1>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+    <ion-card class="background-card">
+      <ion-card-header>
+        <ion-card-title><h1><b>Listing Details</b></h1></ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <b> TITLE </b>
+          <br><br> {{listing.title}}
+        </ion-item>
+        <ion-item>
+            <b> LOCATION </b> 
+            <br><br> {{listing.location}}
+        </ion-item>
+        <ion-item>
+            <b> DESCRIPTION </b>
+            <br><br> {{listing.description}}
+        </ion-item>
+        <ion-item>
+            <b> NUMBER OF PEOPLE </b> 
+            <br><br> {{listing.numberOfPeople}}
+        </ion-item>
+        <ion-item>
+            <b> PRICE PER NIGHT  </b> 
+            <br><br> {{listing.pricePerNight}}
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  
+  </ion-content>

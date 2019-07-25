@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Explore All Current Listings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+
+  <!-- View Profile -->
+  <ion-item>
+    <ion-avatar slot="start">
+      <img
+        src="https://www.pinclipart.com/picdir/middle/181-1814767_person-svg-png-icon-free-download-profile-icon.png">
+    </ion-avatar>
+    <ion-button expand="full" (click)="navToViewProfile()">View Profile</ion-button>
+  </ion-item>
+
+  <!-- View Bookings -->
+  <ion-item>
+    <ion-avatar slot="start">
+      <img
+        src="https://res.cloudinary.com/teepublic/image/private/s--Ml-TTPKS--/t_Preview/b_rgb:ffffff,c_limit,f_jpg,h_630,q_90,w_630/v1491726103/production/designs/1412663_1.jpg">
+    </ion-avatar>
+    <ion-button expand="full" (click)="navToViewBookings()">View Your Bookings</ion-button>
+  </ion-item>
+
+
+  <!-- Search Bar -->
+  <ion-item>
+    <ion-input class="text-input" type="search" placeholder="Search Current Listings"></ion-input>
+  </ion-item>
+
+  <!-- Current Listings -->
+  <div text-center>
+    <ion-grid>
+      <ion-row>
+        <ion-col></ion-col>
+        <ion-col size="auto">
+          <ion-card *ngFor="let listing of listings" class="background-card">
+            <ion-card-header>
+              <ion-grid>
+                <ion-row>
+                  <!-- Title and Image -->
+                  <ion-col push-md align-self: center>
+                    <ion-card-title>
+                      <h1>{{listing.title}}</h1>
+                    </ion-card-title>
+                    <ion-img src="{{listing.img}}"></ion-img>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card-header>
+            <!-- Location and Price -->
+            <ion-card-content>
+              {{listing.location}}
+              <br>
+              {{listing.pricePerNight}}
+              <br>
+              <!-- View Details and Book -->
+              <ion-button (click)="navToViewDetails(listing)">View Details</ion-button>
+              <ion-button (click)="navToMakeBooking(listing)">Book This</ion-button>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <!-- Centering the form -->
+    <ion-row justify-content-center>
+      <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+
+        <!-- Form heading-->
+        <div text-center>
+          <h1><b>AirBnB</b></h1>
+          <h6><b>PROVIDER REGISTRATION</b></h6>
+        </div>
+
+        <!-- Fill In Registration Details -->
+        <div text-center>
+          Name: <input type="text" [(ngModel)]="newprovider.name"><br>
+          Surname: <input type="text" [(ngModel)]="newprovider.surname"><br>
+          Email: <input type="text" [(ngModel)]="newprovider.email"><br>
+          Password: <input type="password" [(ngModel)]="newprovider.password"><br>
+        </div>
+
+        <div>
+          <!-- Register -->
+          <ion-button expand="full" (click)="register(newprovider)">REGISTER</ion-button>
+        </div>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

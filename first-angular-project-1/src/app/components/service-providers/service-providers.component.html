@@ -1,0 +1,21 @@
+<h3>Service Providers</h3>
+<div class="table-responsive">
+  <table class="table table-striped table-sm">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="table-row" *ngFor="let provider of providers">
+        <td>{{provider.Id}}</td>
+        <td>{{provider.name}}</td>
+        <td>{{provider.surname}}</td>
+        <td>{{provider.email}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

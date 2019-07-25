@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar class="background-header">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="curlistings"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Update Listing</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+  <ion-card class="background-card">
+    <ion-card-header>
+      <ion-card-title>Update Listing Details</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-input type="text" placeholder="Title" [(ngModel)]="updatedlisting.title"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="Location" [(ngModel)]="updatedlisting.location"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="Description" [(ngModel)]="updatedlisting.description"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="Number Of People" [(ngModel)]="updatedlisting.numberOfPeople"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="Price Per Night" [(ngModel)]="updatedlisting.pricePerNight"></ion-input>
+      </ion-item>
+      <div>
+        <ion-button size="medium" (click)="update()">Update</ion-button>
+        <ion-button size="medium" (click)="delete()">Delete</ion-button>
+      </div>
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>

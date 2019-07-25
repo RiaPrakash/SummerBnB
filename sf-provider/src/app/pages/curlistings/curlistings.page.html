@@ -1,0 +1,112 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>All Of Your Current Listings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+
+  <!-- View Profile -->
+  <ion-item>
+    <ion-avatar slot="start">
+      <img
+        src="https://www.pinclipart.com/picdir/middle/181-1814767_person-svg-png-icon-free-download-profile-icon.png">
+    </ion-avatar>
+    <ion-button expand="full" (click)="navToViewProfile()">View Profile</ion-button>
+  </ion-item>
+
+  <!-- Access to next page (Create new list page) -->
+  <ion-item>
+    <ion-avatar slot="start">
+      <img
+        src="https://res.cloudinary.com/teepublic/image/private/s--Ml-TTPKS--/t_Preview/b_rgb:ffffff,c_limit,f_jpg,h_630,q_90,w_630/v1491726103/production/designs/1412663_1.jpg">
+    </ion-avatar>
+    <ion-button expand="full" (click)="navToCreateNew()">Create New Listing</ion-button>
+  </ion-item>
+
+  <!-- Search Bar -->
+
+  <!-- <ion-item>
+    <ion-input class="text-input" type="search" placeholder="Search Current Listings" [(ngModel)]="searchInput"></ion-input>
+  </ion-item> -->
+
+
+  <ion-item>
+    <!-- <ion-searchbar *ngIf="isSearchbarOpened" showCancelButton="true" (search)="onSearch($event)" (ionCancel)="isSearchbarOpened=false">
+    </ion-searchbar> -->
+    <ion-input class="text-input" type="search" placeholder="Search Current Listings" (keyup)="onSearch($event)"></ion-input>
+    <!-- <ion-buttons end>
+      <button ion-button icon-only *ngIf="!isSearchbarOpened" click="isSearchbarOpened=true">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons> -->
+  </ion-item>
+
+
+
+  <!-- IMP DON'T DELETE
+    <ion-list *ngFor="let listing of listings;">
+      <ion-item (click)="navToView(listing)">
+        {{listing.title}}
+      </ion-item>
+    </ion-list> -->
+
+
+  <div text-center>
+  <ion-grid>
+  <ion-row>
+  <ion-col ></ion-col>
+  <ion-col size = "auto">
+  
+
+  
+    <ion-card *ngFor="let listing of listingsview" class="background-card">
+    <!-- <ion-card *ngFor="let listing of listings" class="background-card"> -->
+    <!-- <ion-card *ngFor="let listing of listings" class="ion-card-new"> -->
+
+      <ion-card-header>
+        <ion-grid>
+          <ion-row>
+
+            <ion-col push-md align-self: center>
+              <ion-card-title>
+                <h1>{{listing.title}}</h1>
+              </ion-card-title>
+              <!-- <div text-center> -->
+                  <ion-img src="{{listing.img}}"></ion-img>
+                <!-- <ion-img src="{{listing.img}}" style="height: 300px;width: 300px;"></ion-img> -->
+              <!-- </div> -->
+            </ion-col>
+            
+
+          </ion-row>
+        </ion-grid>
+      </ion-card-header>
+
+      <ion-card-content>
+        {{listing.location}}
+        <br>
+        {{listing.pricePerNight}}
+        <br>
+
+      
+      <ion-button (click)="navToViewDetails(listing)">View Details</ion-button>
+      <ion-button (click)="navToUpdateListing(listing)">Update</ion-button>
+      <ion-button (click)="navToViewBookings(listing)">View Bookings</ion-button>
+      <br>
+      <ion-button (click)="deleteListing(listing)">Delete</ion-button>
+      </ion-card-content>
+
+    </ion-card>
+
+  </ion-col>
+  <ion-col></ion-col>
+  </ion-row>
+  </ion-grid>  
+  </div>
+
+
+</ion-content>

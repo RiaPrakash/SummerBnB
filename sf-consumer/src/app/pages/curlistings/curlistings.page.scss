@@ -1,0 +1,66 @@
+//  IMP DON'T DELETE
+// .hover-container {
+//     position: relative;
+//     height: 100px;
+//     &:hover {
+//         .image {
+//             opacity: 0;
+//         }
+//         .text {
+//             opacity: 1;
+//         }
+//     }
+// }
+
+// .image {
+//     position: absolute;
+//     // top: 50%;
+//     width: 100%;
+// }
+
+// .text{
+//     position: absolute;
+//     // top: 50%;
+//     width: 100%; 
+//     opacity: 0;
+// }
+// DON'T DELETE RIA!!
+
+
+.welcome-card ion-img {
+    max-height: 10vh;
+    overflow: hidden;
+  }
+
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+  
+  .blackText {
+    color: black;
+  }
+  
+  ion-col {
+    text-align: center;
+  }
+  
+  ion-content.background{
+    --background: url(http://www.cashadvance6online.com/data/archive/img/3321733825.jpeg);
+    // background-image: url(https://ak1.picdn.net/shutterstock/videos/14666881/thumb/1.jpg);
+    --background-repeat: no-repeat;
+    --background-size: cover;
+  }
+  
+  ion-card.background-card{
+    background-color: white;
+  }
+  
+  .background-header{
+    --background: #909688;
+  }
+
+
+

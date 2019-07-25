@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="curlistings"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      <h1>View Bookings</h1>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+  <ion-card *ngFor="let booking of bookings" class="background-card">
+    <ion-card-header>
+      <ion-grid>
+        <ion-row>
+          <ion-col push-md align-self: center>
+            <ion-card-title>
+                  <h1>Current status: {{booking.status}}</h1>
+                </ion-card-title>
+            <ion-card-subtitle>
+              <h1>Booked by user with id: {{booking.userId}}</h1>
+            </ion-card-subtitle>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-header>
+
+    <ion-card-content>
+      Start date: {{booking.startDate}}
+      <br>
+      End date: {{booking.endDate}}
+    </ion-card-content>
+
+    <ion-button (click)="accept(booking)">Accept Booking</ion-button>
+    <ion-button (click)="reject(booking)">Reject Booking</ion-button>
+
+  </ion-card>
+
+</ion-content>

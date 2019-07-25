@@ -1,0 +1,42 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>Login</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-grid>
+  <!-- Centering the form -->
+  <ion-row justify-content-center>
+    <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+
+      <!-- Form heading-->
+      <div text-center>
+        <h1><b>AirBnB</b></h1>
+        <h6><b>PROVIDER SIGN IN</b></h6>
+      </div>
+
+      <!-- Username and Password -->
+      <div text-center>
+        Email: <input type="text" [(ngModel)]="email"><br>
+        Password: <input type="password" [(ngModel)]="password"><br>
+      </div>
+
+      <div>
+        <!-- Navigate to the next page (Explore) -->
+        <ion-button expand="full" (click)="login()">LOGIN</ion-button>
+      </div>
+
+      <br><br>
+
+      <div text-center>
+          <!-- Forgot Password -->
+          <ion-button color=grey><font color=black>Forgot Password?</font></ion-button>
+          <!-- New Provider -->
+          <ion-button (click)="navToRegister()" color=grey><font color=black>New Provider? Register Now!</font></ion-button>
+          <!-- User -->
+          <ion-button (click)="switchToUser()" color=grey><font color=black>Switch to User</font></ion-button>
+      </div>
+
+    </ion-col>
+  </ion-row>
+</ion-grid>

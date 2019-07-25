@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="curlistings"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Your Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+  <ion-card class="background-card">
+    <ion-card-header>
+      <ion-card-title>
+        <h1><b>Listing Details</b></h1>
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <b> ID </b>
+        <br><br> {{user.Id}}
+      </ion-item>
+      <ion-item>
+        <b> NAME </b>
+        <br><br> {{user.name}}
+      </ion-item>
+      <ion-item>
+        <b> SURNAME </b>
+        <br><br> {{user.surname}}
+      </ion-item>
+      <ion-item>
+        <b> EMAIL </b>
+        <br><br> {{user.email}}
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
