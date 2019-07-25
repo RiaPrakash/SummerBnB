@@ -1,7 +1,7 @@
 import * as tslib_1 from "tslib";
 import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
-import { ListingService } from '../services/listing.service';
+import { ListingService } from '../../services/listing.service';
 var CurlistingsPage = /** @class */ (function () {
     function CurlistingsPage(navCtrl, listingService) {
         this.navCtrl = navCtrl;

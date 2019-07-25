@@ -1,6 +1,6 @@
 import * as tslib_1 from "tslib";
 import { Component } from '@angular/core';
-import { ListingService } from '../services/listing.service';
+import { ListingService } from '../../services/listing.service';
 var UpdatelistingPage = /** @class */ (function () {
     function UpdatelistingPage(listingService) {
         this.listingService = listingService;
