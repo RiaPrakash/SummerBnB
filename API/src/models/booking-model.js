@@ -65,6 +65,32 @@ Booking.findBookingByuserId = (name, userId, result) => {
     });
 };
 
+// Find by User Id
+Booking.findBookingByUserId = (userId, result) => {
+    mysqlConn.query("Select * from booking where userId = ?", userId, (err, res) => {
+        if (err) {
+        console.log("error: ", err);
+        result(err, null);
+        } else {
+        console.log("in Booking.findBookingByUserId: ", res);
+        result(null, res);
+        }
+    });
+};
+
+// Find by Host Id
+Booking.findBookingByHostId = (hostId, result) => {
+    mysqlConn.query("Select * from booking where hostId = ?", hostId, (err, res) => {
+        if (err) {
+        console.log("error: ", err);
+        result(err, null);
+        } else {
+        console.log(res);
+        result(null, res);
+        }
+    });
+};
+
 
 // Add
 Booking.addBooking = (newBooking, result) => {

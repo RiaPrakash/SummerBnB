@@ -49,6 +49,24 @@ router.post('/delete', (req,res) => {
     });
 });
 
+// Delete by UserId
+router.post('/delete/user', (req,res) => {
+    bookingServer.deleteBookingByUserId(req.body.Id).then(booking => {
+        res.json(booking);
+    }).catch(err => {
+        res.json(err);
+    });
+});
+
+// Delete by HostId
+router.post('/delete/host/:ID', (req,res) => {
+    bookingServer.deleteBookingByHostId(req.params.ID).then(booking => {
+        res.json(booking);
+    }).catch(err => {
+        res.json(err);
+    });
+});
+
 // Update
 router.post('/update', (req,res) => {
     bookingServer.updateBooking(req.body).then(booking => {
