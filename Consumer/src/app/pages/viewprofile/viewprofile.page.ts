@@ -25,4 +25,17 @@ export class ViewprofilePage implements OnInit {
       this.navCtrl.navigateForward("home");
     }
   }
+
+  deleteProfile(){
+    this.authServiceService.deleteProfile();
+  }
+
+  updateProfile(){
+    this.navCtrl.navigateForward("updateprofile");
+  }
+
+  signout(){
+    this.authServiceService.signout();
+  }
+
 }

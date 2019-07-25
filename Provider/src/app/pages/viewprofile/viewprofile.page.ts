@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../models/user';
 import { AuthServiceService } from '../../services/auth-service.service';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-viewprofile',
@@ -11,10 +12,17 @@ export class ViewprofilePage implements OnInit {
 
   user: User;
 
-  constructor(private authServiceService: AuthServiceService) { }
+  constructor(private authServiceService: AuthServiceService, private navCtrl: NavController) { }
 
   ngOnInit() {
-    this.user = this.authServiceService.getProfile();
+    if (this.authServiceService.getProfile()){
+      // Get profile to view
+      this.user = this.authServiceService.getProfile();
+    } 
+    else {
+      alert("Not logged in! You must log in first");
+      this.navCtrl.navigateForward("home");
+    }
   }
 
   deleteProfile(){
@@ -22,7 +30,7 @@ export class ViewprofilePage implements OnInit {
   }
 
   updateProfile(){
-    this.authServiceService.updateProfile();
+    this.navCtrl.navigateForward("updateprofile");
   }
 
   signout(){

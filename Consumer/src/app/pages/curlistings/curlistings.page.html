@@ -30,7 +30,7 @@
 
   <!-- Search Bar -->
   <ion-item>
-    <ion-input class="text-input" type="search" placeholder="Search Current Listings"></ion-input>
+    <ion-input class="text-input" type="search" placeholder="Search Current Listings" (keyup)="onSearch($event)"></ion-input>
   </ion-item>
 
   <!-- Current Listings -->
@@ -39,7 +39,7 @@
       <ion-row>
         <ion-col></ion-col>
         <ion-col size="auto">
-          <ion-card *ngFor="let listing of listings" class="background-card">
+          <ion-card *ngFor="let listing of listingsview" class="background-card">
             <ion-card-header>
               <ion-grid>
                 <ion-row>
@@ -57,7 +57,7 @@
             <ion-card-content>
               {{listing.location}}
               <br>
-              {{listing.pricePerNight}}
+              EUR {{listing.pricePerNight}} Per Night
               <br>
               <!-- View Details and Book -->
               <ion-button (click)="navToViewDetails(listing)">View Details</ion-button>

@@ -47,13 +47,14 @@ export class AuthServiceService {
     });
   }
 
-  updateProfile(){
-    this.http.post('http://localhost:5000/api/users/update/', this.user).subscribe((response) => {
+  updateProfile(profileToUpdate: User){
+    this.http.post('http://localhost:5000/api/users/update/', profileToUpdate).subscribe((response) => {
       if (response) { // successful http request, same format as HttpResponse model / class
-        this.navController.navigateForward('home'); // navigate to the users page
+        console.log("updated: ", response);
+        this.navController.navigateForward('curlistings'); // navigate to the users page
       }
       else {
-        alert('User was not deleted'); // display an alert if response has an error 
+        alert('User was not updated'); // display an alert if response has an error 
       }
       console.log(response);
     });

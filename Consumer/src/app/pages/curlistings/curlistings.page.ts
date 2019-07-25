@@ -12,10 +12,16 @@ import { Listing } from '../../models/listing';
 export class CurlistingsPage implements OnInit {
 
   listings: any;
+  listingsview: any;
 
   constructor( private navCtrl: NavController, private listingService: ListingService, private authServiceService: AuthServiceService
   ) { 
-    // this.listings = new Array<Listing>();
+  }
+
+  onSearch(event){
+    console.log("search stuff: ", event.target.value);
+    const regexp = new RegExp(event.target.value);
+    this.listingsview = this.listings.filter(listing => regexp.test(listing.title));
   }
 
   ngOnChanges(){
@@ -23,7 +29,16 @@ export class CurlistingsPage implements OnInit {
     this.authServiceService.getAllListings().subscribe(response => {
       console.log("listings are: ", response);
       this.listings = response;
+      this.listingsview = response;
       });
+  }
+
+  ionViewWillEnter() {
+    this.authServiceService.getAllListings().subscribe(response => {
+      console.log("listings are: ", response);
+      this.listings = response;
+      this.listingsview = response;
+    });
   }
 
   ngOnInit() {
@@ -34,6 +49,7 @@ export class CurlistingsPage implements OnInit {
       this.authServiceService.getAllListings().subscribe(response => {
         console.log("listings are: ", response);
         this.listings = response;
+        this.listingsview = response;
         });
     } 
     // Redirect to login page if not loggen in

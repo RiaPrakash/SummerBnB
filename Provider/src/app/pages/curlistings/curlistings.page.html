@@ -28,32 +28,9 @@
   </ion-item>
 
   <!-- Search Bar -->
-
-  <!-- <ion-item>
-    <ion-input class="text-input" type="search" placeholder="Search Current Listings" [(ngModel)]="searchInput"></ion-input>
-  </ion-item> -->
-
-
   <ion-item>
-    <!-- <ion-searchbar *ngIf="isSearchbarOpened" showCancelButton="true" (search)="onSearch($event)" (ionCancel)="isSearchbarOpened=false">
-    </ion-searchbar> -->
     <ion-input class="text-input" type="search" placeholder="Search Current Listings" (keyup)="onSearch($event)"></ion-input>
-    <!-- <ion-buttons end>
-      <button ion-button icon-only *ngIf="!isSearchbarOpened" click="isSearchbarOpened=true">
-        <ion-icon name="search"></ion-icon>
-      </button>
-    </ion-buttons> -->
   </ion-item>
-
-
-
-  <!-- IMP DON'T DELETE
-    <ion-list *ngFor="let listing of listings;">
-      <ion-item (click)="navToView(listing)">
-        {{listing.title}}
-      </ion-item>
-    </ion-list> -->
-
 
   <div text-center>
   <ion-grid>
@@ -61,35 +38,25 @@
   <ion-col ></ion-col>
   <ion-col size = "auto">
   
-
-  
     <ion-card *ngFor="let listing of listingsview" class="background-card">
-    <!-- <ion-card *ngFor="let listing of listings" class="background-card"> -->
-    <!-- <ion-card *ngFor="let listing of listings" class="ion-card-new"> -->
 
       <ion-card-header>
         <ion-grid>
           <ion-row>
-
             <ion-col push-md align-self: center>
               <ion-card-title>
                 <h1>{{listing.title}}</h1>
               </ion-card-title>
-              <!-- <div text-center> -->
                   <ion-img src="{{listing.img}}"></ion-img>
-                <!-- <ion-img src="{{listing.img}}" style="height: 300px;width: 300px;"></ion-img> -->
-              <!-- </div> -->
             </ion-col>
-            
-
-          </ion-row>
+         </ion-row>
         </ion-grid>
       </ion-card-header>
 
       <ion-card-content>
         {{listing.location}}
         <br>
-        {{listing.pricePerNight}}
+        EUR {{listing.pricePerNight}} Per Night
         <br>
 
       

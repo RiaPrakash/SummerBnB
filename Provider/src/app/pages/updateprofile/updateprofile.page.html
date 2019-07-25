@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="viewprofile"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Update Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="background">
+    <ion-card class="background-card">
+      <ion-card-header>
+        <ion-card-title>Update Profile Details</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-input type="text" placeholder="Name" [(ngModel)]="updatedprofile.name"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="text" placeholder="Surname" [(ngModel)]="updatedprofile.surname"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="text" placeholder="Email" [(ngModel)]="updatedprofile.email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="text" placeholder="Password" [(ngModel)]="updatedprofile.password"></ion-input>
+        </ion-item>
+        <div>
+          <ion-button size="medium" (click)="update()">Update</ion-button>
+        </div>
+      </ion-card-content>
+  
+    </ion-card>
+  
+  </ion-content>

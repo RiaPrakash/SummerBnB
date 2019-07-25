@@ -11,6 +11,8 @@ const routes: Routes = [
   { path: 'viewbookings', loadChildren: './pages/viewbookings/viewbookings.module#ViewbookingsPageModule' },
   { path: 'viewprofile', loadChildren: './pages/viewprofile/viewprofile.module#ViewprofilePageModule' },
   { path: 'register', loadChildren: './pages/register/register.module#RegisterPageModule' },
+  { path: 'updateprofile', loadChildren: './pages/updateprofile/updateprofile.module#UpdateprofilePageModule' },
+  { path: 'updateprofile', loadChildren: './pages/updateprofile/updateprofile.module#UpdateprofilePageModule' },
 ];
 
 @NgModule({

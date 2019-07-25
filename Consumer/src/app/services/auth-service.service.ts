@@ -52,6 +52,35 @@ export class AuthServiceService {
   getAllListings(){
     return this.http.get('http://localhost:5000/api/listings');
   }
+  
+  signout(){
+    this.user = null;
+    this.navController.navigateForward('home');
+  }
 
+  deleteProfile(){
+    this.http.post('http://localhost:5000/api/users/delete/', this.user).subscribe((response) => {
+      if (response) { // successful http request, same format as HttpResponse model / class
+        this.navController.navigateForward('home'); // navigate to the users page
+      }
+      else {
+        alert('User was not deleted'); // display an alert if response has an error 
+      }
+      console.log(response);
+    });
+  }
+
+  updateProfile(profileToUpdate: User){
+    this.http.post('http://localhost:5000/api/users/update/', profileToUpdate).subscribe((response) => {
+      if (response) { // successful http request, same format as HttpResponse model / class
+        console.log("updated: ", response);
+        this.navController.navigateForward('curlistings'); // navigate to the users page
+      }
+      else {
+        alert('User was not updated'); // display an alert if response has an error 
+      }
+      console.log(response);
+    });
+  }
 
 }

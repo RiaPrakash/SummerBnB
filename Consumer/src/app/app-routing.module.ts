@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: 'viewlisting', loadChildren: './pages/viewlisting/viewlisting.module#ViewlistingPageModule' },
   { path: 'viewbookings', loadChildren: './pages/viewbookings/viewbookings.module#ViewbookingsPageModule' },
   { path: 'viewprofile', loadChildren: './pages/viewprofile/viewprofile.module#ViewprofilePageModule' },
+  { path: 'updateprofile', loadChildren: './pages/updateprofile/updateprofile.module#UpdateprofilePageModule' },
   { path: 'register', loadChildren: './pages/register/register.module#RegisterPageModule' },
   { path: 'makebooking', loadChildren: './pages/makebooking/makebooking.module#MakebookingPageModule' },
 ];
